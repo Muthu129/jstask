@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="sign.css">
+</head>
+<body>
+    <div id="form">
+        <div class="box"> 
+            <fieldset>     
+            <h2>Sign Up</h2>
+            <div class="inner">
+
+    
+        <form div id="lab" method="get" action="login.html">
+                        <div class="contro">
+                        <label for="e_name"><b>User Name</b></label>
+                        <span><i class="fa-solid fa-envelope"></i></span>
+
+                        <input type="text" name="e_name" id="namee"  placeholder="enter the user name">
+                        <div class="err"></div>
+                    </div>
+                        <div class="contro">
+
+                        <label for="e_name"><b>Email</b></label>
+                        <span><i class="fa-solid fa-envelope"></i></span>
+
+                        <input type="email" name="e_name" id="mail"  placeholder="email@gmail.com"><br>
+                        <div class="err"></div>
+
+                    </div>
+                        <div class="contro">
+
+                        <label for="e_name"><b>Password</b></label>
+                        <span><i class="fa-solid fa-envelope"></i></span>
+
+                        <input type="password" name="e_name" id="pass" placeholder="password"><br>
+                        <div class="err"></div>
+
+                    </div>
+                    <div class="contro">
+    
+                    <label for="Confirm Password"><b>Confirm Password</b></label>
+                        <span><i class="fa-solid fa-lock"></i></span>
+
+                        <input   type="password" id="cpass" placeholder="confirm password""><br>
+                        <div class="err"></div>
+
+                    </div>
+                    <br>
+                    <div class="but">
+
+                        <button class="btn"><center> Submit</center></button>
+                    </div>
+
+            </fieldset>
+                    
+            </div>
+        </div>
+            
+        
+        </form>
+        
+    </div>
+    <script>
+        const form=document.getElementById("lab")
+        const namee=document.getElementById("namee")
+        const mail=document.getElementById("mail")
+        const pass=document.getElementById("pass")
+        const cpass=document.getElementById("cpass")
+
+        form.addEventListener('submit',(e)=>{
+            if (!checkInput()){
+                e.preventDefault();
+            }
+            
+            
+        });        
+        function checkInput(){
+            const mailValue=mail.value.trim()
+            const passValue=pass.value.trim()
+            const cpassValue=cpass.value.trim()
+            const nameValue=namee.value.trim()
+            let success=true;
+
+
+            if(nameValue ===''){
+                success=false;
+                setError(namee,' name does not empty')
+            }
+            else{
+                setSuccess(namee)
+            }
+            if(mailValue ===''){
+                success=false;
+                setError(mail,"Email cannot be empty")
+            }
+            else if(!isEmail(mailValue)){
+                success=false;
+                setError(mail,"not a valid email")
+
+            }
+            else{
+                setSuccess(mail)
+
+            }
+            if(passValue ===''){
+                success=false;
+                setError(pass,' password does not empty')
+            }
+            else if(passValue.length<8){
+                success=false;
+                setError(pass,' password must be atleast 8 characters')
+
+            }
+            else{
+                setSuccess(pass)
+            }
+            if(cpassValue ===''){
+                success=false;
+
+                setError(cpass,' password does not empty')
+            }
+            else if(passValue !==cpassValue){
+                success=false;
+
+                setError(cpass,'password does not match')
+            }
+            else{
+                setSuccess(cpass)
+            }
+            return success;
+        }
+        function setError(input,message){
+            const contro=input.parentElement;
+            const small=contro.querySelector('.err')
+            small.innerText = message;
+            contro.classList.remove('success');
+            contro.classList.add('error')
+
+        }
+        function setSuccess(input){
+            const contro=input.parentElement;
+            const small=contro.querySelector('.err')
+            small.innerText = '';
+            contro.classList.add('success');
+            contro.classList.remove('error')
+
+        }
+        function isEmail(mail){
+            return String(mail)
+            .toLowerCase()
+        
+        };
+
+    </script>
+</body>
+</html>
