@@ -1,0 +1,83 @@
+#form{
+    margin: auto;
+    max-width: 430px;
+    text-align: center;
+    padding: 80px;
+    box-shadow: rgb(240, 14, 6);
+    
+}
+span{
+    padding: 15px;
+    display: inline-block;
+}
+body{
+    background-image: url("images/th (2).jfif");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+}
+.box{
+    padding: 15px 25px;
+    box-shadow: 10px 5px 10px 5px rgb(7, 22, 22);
+    width: 290px;
+    perspective: 1000px;
+    color: rgb(255, 238, 0);
+    border-radius: 5%;
+    backdrop-filter: blur(10px);
+
+
+}
+.inner #lab label{
+    display: block;
+    text-align: left;
+    transform: rotate();
+    font-size: x-large;
+    color: rgb(255, 251, 0);
+    
+}
+.inner #lab input{
+    width: 70%;
+    padding: 5px;
+
+}
+
+.but{
+    display: inline-block;
+    border-color: blue;
+    border-style: hidden;
+    width: 100%;
+}
+header>h3{
+    display: inline-block;
+    padding-right: 100px;
+    text-shadow: black;
+    color: yellow;
+    font-size: large;
+}
+
+fieldset{
+    border-color:black;
+    
+}
+a{
+    color: rgb(5, 170, 235);
+}
+.foot{
+    padding: 10px;
+}
+.contro input{
+    border-color:rgb(0, 0, 0);
+    border-radius: 5px;
+    
+}
+.contro.error input{
+    border-color: red;
+}
+.contro.success input{
+    border-color: green;
+}
+.err{
+    color: red;
+}
