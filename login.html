@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=,, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+           
+</head>
+<body> 
+    <header>
+        <h3><a style="text-decoration: none;" href="D:/js task/signup.html">Back</a></h3>
+    </header>
+    </div> 
+<div id="form">
+        <div class="box"> 
+            <fieldset>     
+            <h2>Login</h2>
+            <div class="inner">
+
+    
+        <form id="logi" action="todoli.html" method="get">
+                     <div class="lab">
+
+                        <label for="e_name"><b>Email:</b></label>
+                        <span><i class="fa-solid fa-envelope"></i></span>
+
+                        <input type="email" name="e_name" id="mail" placeholder="email@gmail.com"><br>
+                        <div class="err"></div>
+
+                    </div>
+                    <br>
+                    <div class="lab">
+                        <label for="password"><b>Password:</b></label>
+                        <span><i class="fa-solid fa-lock"></i></span>
+
+                        <input style="font-family: 'sharp'; font-weight: 700;"  id="pass" type="password" placeholder="Password""><br>
+                        <div class="err"></div>
+
+                    </div>
+                    
+                    <div class="but">
+
+                        <button><center>Submit</center></button>
+                    </div>
+
+            </fieldset>
+                    
+            </div>
+        </div>
+            
+        
+        </form>
+        
+    </div>
+    <script>
+        const form=document.getElementById("logi")
+        const mail=document.getElementById("mail")
+        const pass=document.getElementById("pass")
+
+        form.addEventListener('submit',(e)=>{
+            if (!checkInput()){
+                e.preventDefault();
+            }
+            
+            
+        });     
+            
+        function checkInput(){
+            const mailValue=mail.value.trim()
+            const passValue=pass.value.trim()
+            let success=true;
+            if(mailValue ===''){
+                success=false;
+                setError(mail,"Email cannot be empty")
+            }
+            else if(!isEmail(mailValue)){
+                success=false;
+                setError(mail,"not a valid email")
+
+            }
+            else{
+                setSuccess(mail)
+
+            }
+            if(passValue ===''){
+                success=false;
+                setError(pass,' password does not empty')
+            }
+            else if(passValue.length<8){
+                success=false;
+                setError(pass,' password must be atleast 8 characters')
+
+            }
+            else{
+                setSuccess(pass)
+            }
+            return success
+        }
+        function setError(input,message){
+            const lab=input.parentElement;
+            const error=lab.querySelector('.err')
+            error.innerText = message;
+            lab.classList.remove('success');
+            lab.classList.add('error')
+
+        }
+        function setSuccess(input){
+            const lab=input.parentElement;
+            const error=lab.querySelector('.err')
+            error.innerText = '';
+            lab.classList.add('success')
+            lab.classList.remove('error')
+
+        }
+        function isEmail(mail){
+            return String(mail)
+            .toLowerCase()
+        
+        };
+
+    </script>
+    
+
+
+
+</body>
+</html>
