@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            text-align: center;
+            padding-top: 10%;
+            background-color: black;
+            background-image: url("images/wallpaper2you_286418.jpg");
+            height: 100%;
+            width: 100%;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        #h1{
+            background-color: red;
+            color: yellow;
+            display: block;
+            justify-content: center;
+        }
+        ul{
+            list-style: none;
+        }
+        fieldset{
+            padding: 20px;
+            width: 30%;
+            margin: 0 auto;
+        }
+        #text{
+            justify-content: space-between;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <fieldset>
+    <div id="h1">
+    <span><h1>To-Do List</h1></span></div>
+    <br><br>
+    <input id="input">
+    <button onclick="inpu()">Add</button>
+    <ul id="text" style="color: red;">
+        <li>
+        </li>
+</ul>
+</fieldset>
+<script>
+    var txt=document.getElementById("text")
+    var input=document.getElementById("input")
+    function inpu(){
+        var list=document.createElement("li")
+        list.innerHTML=input.value+"  "+ "<button onclick='delet(event)' > delete</button>"
+        txt.append(list)
+    }
+    function delet(event){
+        event.target.parentElement.remove()
+    }
+   
+</script>
+</body>
+</html>

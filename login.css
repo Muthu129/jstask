@@ -1,0 +1,78 @@
+#form{
+    margin: auto;
+    max-width: 430px;
+    text-align: center;
+    padding: 80px;
+    box-shadow: forestgreen;
+    
+    
+}
+span{
+    padding: 15px;
+    display: inline-block;
+}
+body{
+    background-image: url("images/th (1).jfif");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    background-attachment:fixed;
+    
+}
+.box{
+    padding: 15px 25px;
+    box-shadow: 10px 5px 10px 5px rgb(12, 11, 11);
+    width: 290px;
+    perspective: 1000px;
+    color: yellow;
+    border-radius: 5%;
+    background-image:linear-gradient(70deg ,black,rgb(250, 255, 251)1) ;
+    backdrop-filter: blur(10px);
+
+
+}
+.inner .lab label{
+    display: block;
+    text-align: left;
+    transform: rotate();
+    font-size: x-large;
+    color: yellow;
+    
+}
+.inner .lab input{
+    width: 70%;
+    padding: 5px;
+
+}
+
+header>h3{
+    display: inline-block;
+    padding-right: 100px;
+    text-shadow: black;
+    color: yellow;
+    font-size: large;
+}
+
+fieldset{
+    border-color:black;
+    
+}
+a{
+    color: rgb(255, 0, 0);
+    font-size: large;
+}
+.foot{
+    padding: 10px;
+}
+.lab.error input{
+    border-color: red;
+}
+.lab.success input{
+    border-color: green;
+}
+.err{
+    color: red;
+}
+
